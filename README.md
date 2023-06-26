@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+# Linkstagram
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Linkstagram is a clone of well-known app - Instagram
 
-## Available Scripts
+## About
 
-In the project directory, you can run:
+Project is created due to my learning, because I want to improve my skills. Technology used:
+- React
+- Redux
+- TypeScript
+- Node.js
+- Express
+- MongoDB
 
-### `npm start`
+## Deployment
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+https://linkstagram-pi.vercel.app
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Client part of website is deployed on Vercel
+Server part of website is deployed on Render
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Use this command to install all needed packages in server and client folder
 
-### `npm run build`
+```bash
+npm install 
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Create .env file in server folder, and add all this environmet variables:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+SECRET_KEY=<> - special key for JWT token
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+CLOUDINARY_CLOUD_NAME=<>
+CLOUDINARY_API_KEY=<>
+CLOUDINARY_API_SECRET=<>
 
-### `npm run eject`
+Variables from Cloudinary service
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+MONGODB_URI=<> - MongoDB database
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Project status
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Project considered to be done, in future it'll be good to create stories functional, make better responsivness, add extra features, and of course fix some bugs, but for the first full-stack project, it's the final version for now.
