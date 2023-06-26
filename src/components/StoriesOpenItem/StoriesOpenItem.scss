@@ -1,0 +1,19 @@
+@import '../../assets/scss/vars';
+
+.storiesOpenItem {
+   width: 13%;
+   height: 300px;
+   background-color: $gray;
+   border-radius: 12px;
+
+   div {
+     width: 500px; 
+   }
+
+   &--active {
+      width: 30%;
+      height: 46rem;
+      border-radius: 0;
+      box-shadow: inset 0 80px 40px -20px rgba($color: $black, $alpha: .4);
+   }
+}

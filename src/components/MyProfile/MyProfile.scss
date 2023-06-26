@@ -1,0 +1,180 @@
+@import '../../assets/scss/vars';
+
+.myProfile {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.myProfileAvatar {
+   position: relative;
+   width: 110px;
+   height: 110px;
+   background: linear-gradient(45deg, rgba(116,237,242,1) 0%, rgba(81,86,230,1) 100%);
+   border-radius: 24px;
+}
+
+.myProfileImg {
+   width: 104px;
+   height: 104px;
+
+   border-radius: 22px;
+   box-sizing: border-box;
+
+   position: absolute;
+   top: 3px;
+   left: 3px;
+}
+
+.myProfileBody {
+   width: 50%;
+   text-align: center;
+}
+
+.myProfileDetails {
+   display: flex;
+   justify-content: center;
+   color: rgba($color: #000000, $alpha: .5);
+   font-weight: 600;
+   padding-bottom: 20px;
+}
+
+.myProfileName {
+   color: $black;
+   padding-right: 8px;
+}
+
+.skeleton-myProfileName {
+   width: 40%;
+   height: 22px;
+   margin-right: 8px;
+}
+
+.myProfileJob {
+   color: $black;
+   padding-left: 8px;
+}
+
+.skeleton-myProfileJob {
+   width: 30%;
+   height: 22px;
+   margin-left: 8px;
+}
+
+.myProfileAbout {
+   font-size: 12px;
+   color: $dark_gray;
+   line-height: 20px;
+   font-weight: 500;
+}
+
+.skeleton-myProfileAbout {
+   margin: 0 auto;
+
+   width: 60%;
+   height: 44px;
+}
+
+.myProfileInfo {
+   display: grid;
+   width: 30%;
+}
+
+.myProfileFollows {
+   display: flex;
+   justify-content: space-around;
+   padding-bottom: 10px;
+}
+
+.myProfileFollowers {
+   display: grid;
+   text-align: center;
+   line-height: 1.4;
+   color: $gray;
+   padding-right: 15px;
+
+   span {
+      color: $black;
+      font-weight: 600;
+   }
+}
+
+.skeleton-myProfileFollows {
+   height: 22px;
+   width: 50%;
+   margin: 0 auto;
+}
+
+.myProfileFollowing {
+   display: grid;
+   text-align: center;
+   line-height: 1.4;
+   color: $gray;
+   padding-left: 15px;
+
+
+   span {
+      color: $black;
+      font-weight: 600;
+   }
+}
+
+.myProfileButtons {
+   display: flex;
+   justify-content: space-between;
+}
+
+.myProfileEditButton {
+   padding: 10px 27px;
+   
+
+   font-size: 16px;
+   font-weight: 600;
+   line-height: 1.5;
+
+   background-color: white;
+   border: .5px solid $gray;
+   border-radius: 12px;
+   box-sizing: border-box;
+
+   transition: background-color .2s ease-in-out;
+   
+   &:hover {
+      background-color: $gray;
+   }
+}
+
+.myProfileNewPostButton {
+   padding: 10.8px 32px;
+
+   font-size: 16px;
+   font-weight: 600;
+   line-height: 1.5;
+
+   background-color: $blue;
+   color: white;
+   border: none;
+   border-radius: 12px;
+
+   transition: background-color .2s ease-in-out;
+   
+   &:hover {
+      background-color: darken($color: $blue, $amount: 20);
+   }
+}
+
+// Skeleton
+.skeleton {
+   animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+   0% {
+     background-color: hsl(200, 20%, 80%);
+   }
+   100% {
+     background-color: hsl(200, 20%, 95%);
+   }
+}
+

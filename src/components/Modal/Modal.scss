@@ -1,0 +1,29 @@
+@import '../../assets/scss/vars';
+
+
+.modalBackground {
+   position: fixed;
+   height: 100%;
+   width: 100%;
+   top: 0;
+   left: 0;
+   z-index: 100;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   background-color: rgba($color: $black, $alpha: .5);
+
+}
+
+.modalContainer {
+   width: auto;
+   height: fit-content;
+
+   background-color: white;
+   border-radius: 32px;
+
+   box-shadow: 0 0 10px 1px rgba($color: $black, $alpha: .3);
+
+}

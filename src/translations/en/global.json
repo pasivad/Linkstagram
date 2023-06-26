@@ -1,0 +1,38 @@
+{
+   "signOutHeader": "Sign Out",
+   "signUpFooter": "Have an account?",
+   "signInFooter": "Don't have an account?",
+   "signUpHeader": "Sign Up",
+   "signInHeader": "Sign In",
+   "homeButton": "Home",
+   "passwordPlaceholder": "Type in...",
+   "language": {
+      "item1": "UA",
+      "item2": "PL",
+      "item3": "RU"
+   },
+   "post": {
+      "postTime": "Just now",
+      "postShare": "Share"
+   },
+   "sidebar": {
+      "followers": "Followers",
+      "following": "Following",
+      "editProfile": "Edit profile",
+      "newPost": "New post"
+   },
+   "modal": {
+      "userName": "User Name",
+      "secondName": "Second Name",
+      "job": "Job",
+      "description": "Description",
+      "cancelBtn": "Cancel",
+      "saveBtn": "Save",
+      "userNamePlaceholder": "User Name...",
+      "secondNamePlaceholder": "Second Name...",
+      "jobPlaceholder": "Job...",
+      "descriptionPlaceholder": "Description...",
+      "editProfileHeader": "Profile Information",
+      "uploadPhoto": "Upload any photos from your library"
+   }
+}

@@ -1,0 +1,21 @@
+@import '../../assets/scss/vars';
+
+.signInContainer {
+   display: flex;
+   margin: 0 200px;
+   padding-top: 90px;
+}
+@media screen and (max-width: $small) {
+   .signInContainer {
+      margin: 0 50px;
+   }
+}
+
+@media screen and (max-width: $tablet) {
+   .signInContainer {
+      justify-content: center;
+      padding-bottom: 100px;
+      margin: 0;
+   }
+}
+

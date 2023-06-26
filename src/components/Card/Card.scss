@@ -1,0 +1,250 @@
+@import '../../assets/scss/vars';
+
+.cardItem {
+   margin-top: 50px;
+}
+
+
+.cardHeader {
+   display: flex;
+   margin-bottom: 16px;
+}
+
+.cardAvatar {
+   width: 40px;
+   height: 40px;
+   border-radius: 12px;
+   margin-right: 16px;
+   border: .5px solid $gray;
+}
+
+.skeleton-cardAvatar {
+   width: 40px;
+   height: 40px;
+   border-radius: 12px;
+   margin-right: 16px;
+}
+
+.cardName {
+   font-size: 16px;
+   text-decoration: none;
+   color: $black;
+   line-height: 1.4;
+   font-weight: 500;
+   font-family: 'Poppins';
+}
+
+.skeleton-cardName {
+   height: 22px;
+   width: 140px;
+}
+
+.cardTime {
+   font-size: 12px;
+   color: rgba($color: $black, $alpha: .25);
+   line-height: 1.4;
+   font-weight: 600;
+}
+
+.cardSettings {
+   font-size: 40px;
+   z-index: 0;
+
+   margin-right: -10px;
+   margin-left: auto;
+
+   rotate: (90deg);
+
+   text-decoration: none;
+   color: rgba($color: $black, $alpha: .7);
+
+   transition: color .1s ease-in-out;
+   &:hover {
+      color: rgba($color: $black, $alpha: .25);
+   }
+}
+
+.cardPhoto {
+   width: 560px;
+   height: 560px;
+   border-radius: 48px;
+}
+
+.skeleton-cardPhoto {
+   width: 560px;
+   height: 560px;
+   border-radius: 48px;
+}
+
+.cardText {
+   padding: 20px 10px;
+   color: $dark_gray;
+   font-family: 'Poppins';
+   font-weight: 500;
+   line-height: 1.2;
+}
+
+.skeleton-cardText {
+   margin: 20px 10px;
+   height: 40px;
+   width: 100%;
+}
+
+.cardFooter {
+   display: flex;
+   align-items: center;
+   padding: 0 10px;
+   font-weight: 600;
+}
+
+.likes {
+   display: flex;
+   align-items: center;
+   padding-right: 50px;
+
+   svg {
+      width: 24px;
+      height: 24px;
+      color: rgba($color: $black, $alpha: .7);
+      cursor: pointer;
+
+      transition: all .1s ease-in-out;
+
+      &:hover {
+         color: $dark_gray;
+         scale: 1.5;
+      }
+   }
+
+   span {
+      padding-left: 10px;
+      width: 20px;
+   }
+
+}
+
+.comments {
+   display: flex;
+   align-items: center;
+   text-decoration: none;
+   color: black;
+   cursor: pointer;
+
+   transition: color .1s ease-in-out;
+ 
+   svg {
+      cursor: pointer;
+
+      width: 20px;
+      height: 20px;
+      color: rgba($color: $black, $alpha: .7);
+
+   }
+   span {
+      padding-left: 10px;
+   }
+   &:hover {
+      color: $dark_gray;
+      svg {
+         transition: color .1s ease-in-out;
+         color: $dark_gray;
+      }
+   }
+}
+
+.shareButton {
+   display: flex;
+   align-items: center;
+
+   margin-left: auto;
+   background-color: inherit;
+   border: none;
+
+   font-size: 16px;
+   font-weight: 600;
+   font-family: 'Poppins';
+
+   &:hover {
+      color: $dark_gray;
+   }
+
+   svg {
+      padding-left: 10px;
+      width: 20px;
+      height: 20px;
+   }
+}
+
+.skeleton {
+   animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+   0% {
+     background-color: hsl(200, 20%, 80%);
+   }
+   100% {
+     background-color: hsl(200, 20%, 95%);
+   }
+}
+
+@media screen and (max-width: 600px) {
+   .cardPhoto {
+      width: 460px;
+      height: 460px;
+   }
+   .skeleton-cardPhoto {
+      width: 460px;
+      height: 460px;
+   }
+   
+}
+@media screen and (max-width: 480px) {
+   .cardPhoto {
+      width: 360px;
+      height: 360px;
+   }
+   .skeleton-cardPhoto {
+      width: 360px;
+      height: 360px;
+   }
+   .cardText {
+      font-size: 10px;
+   }
+   .cardName {
+      font-size: 12px;
+   }
+   .cardTime {
+      font-size: 10px;
+   }
+   .cardAvatar {
+      width: 30px;
+      height: 30px;
+   }
+   .cardSettings {
+      font-size: 30px;
+   }
+   .likes {
+      padding-right: 20px;
+   }
+}
+@media screen and (max-width: 420px) {
+   .cardPhoto {
+      width: 300px;
+      height: 300px;
+   }
+   .skeleton-cardPhoto {
+      width: 300px;
+      height: 300px;
+   }
+}
+@media screen and (max-width: 340px) {
+   .cardPhoto {
+      width: 280px;
+      height: 280px;
+   }
+   .skeleton-cardPhoto {
+      width: 280px;
+      height: 280px;
+   }
+}

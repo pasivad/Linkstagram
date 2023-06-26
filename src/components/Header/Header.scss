@@ -1,0 +1,42 @@
+@import '../../assets/scss/vars.scss';
+
+.header {
+   position: fixed;
+   width: calc(100% - 128px);
+   z-index: 1;
+   padding: 24px 64px;
+   display: flex;
+   justify-content: space-between;
+   background-color: white;
+   box-shadow: 0px 4px 16px 0 rgba($color: $black, $alpha: .05);
+
+   align-items: center;
+}
+
+.header_title {
+   color: $black;
+   font-family: 'Poppins';
+   line-height: 24px;
+   font-style: italic;
+   font-weight: 700;
+
+   text-decoration: none;
+}
+
+.nav_bar {
+   display: flex;
+}
+
+@media screen and (max-width: $small) {
+
+}
+@media screen and (max-width: $tablet) {
+
+}
+@media screen and (max-width: 500px) {
+   .header {
+      width: calc(100% - 40px);
+
+      padding: 24px 20px;
+   }
+}

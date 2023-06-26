@@ -1,0 +1,38 @@
+{
+   "signOutHeader": "Wychodzić",
+   "signUpFooter": "Mieć konto?",
+   "signInFooter": "Nie masz konta?",
+   "signUpHeader": "Zapisać się",
+   "signInHeader": "Zalogować się",
+   "homeButton": "Główny",
+   "passwordPlaceholder": "Wpisz...",
+   "language": {
+      "item1": "EN",
+      "item2": "UA",
+      "item3": "RU"
+   },
+   "post": {
+      "postTime": "Dopiero co",
+      "postShare": "Udział"
+   },
+   "sidebar": {
+      "followers": "Obserwujący",
+      "following": "Następny",
+      "editProfile": "Edytuj profil",
+      "newPost": "Nowy post"
+   },
+   "modal": {
+      "userName": "Imię",
+      "secondName": "Drugie imię",
+      "job": "Stanowisko",
+      "description": "Opis",
+      "cancelBtn": "Anulować",
+      "saveBtn": "Ratować",
+      "userNamePlaceholder": "Imię...",
+      "secondNamePlaceholder": "Drugie imię...",
+      "jobPlaceholder": "Stanowisko...",
+      "descriptionPlaceholder": "Opis...",
+      "editProfileHeader": "Informacje o Profilu",
+      "uploadPhoto": "Prześlij dowolne zdjęcia ze swojej biblioteki"
+   }
+}

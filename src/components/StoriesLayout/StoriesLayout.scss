@@ -1,0 +1,57 @@
+@import '../../assets/scss/vars.scss';
+
+.storiesLayout {
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   background-color: darken($dark_gray, 40);
+   z-index: 100;
+}
+
+.storiesLayoutHeader {
+   position: relative;
+   z-index: 1;
+   display: flex;
+   justify-content: space-between;
+   padding: 20px;
+   
+}
+
+.storiesCloseBtn {
+   background: none;
+   border: none;
+   svg {
+      color: white;
+      font-size: 40px;
+      transition: color .1s ease-in-out;
+
+      &:hover {
+         color: $gray;
+      }  
+   }
+}
+
+.storiesLayoutTitle {
+   font-size: 26px;
+   color: white;
+   font-family: 'Poppins';
+   font-weight: 600;
+   font-style: italic;
+   text-decoration: none;
+}
+
+.storiesLayoutSlider {
+   width: 94%;
+   position: absolute;
+   top: 0;
+   left: 3%;
+   z-index: 0;
+   color: red;
+
+   display: flex;
+   justify-content: space-between;
+   padding: 30px 0;
+   align-items: center;
+}
