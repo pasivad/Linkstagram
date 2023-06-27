@@ -20,6 +20,7 @@ Free tier does spin down after 15 minutes of inactivity, so the first request af
 https://linkstagram-pi.vercel.app
 
 Client part of website is deployed on Vercel
+
 Server part of website is deployed on Render
 
 ## Installation
