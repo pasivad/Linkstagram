@@ -37,7 +37,7 @@ const EditProfileForm = () => {
   };
 
   return (
-    <form className="editProfileForm">
+    <div className="editProfileForm">
       <h1 className="editProfileTitle">{t('modal.editProfileHeader')}</h1>
       <div className="inputItem">
         <label htmlFor="uName">{t('modal.userName')}</label>
@@ -59,7 +59,7 @@ const EditProfileForm = () => {
           {t('modal.saveBtn')}
         </button>
       </div>
-    </form>
+    </div>
   );
 };
 
