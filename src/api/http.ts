@@ -2,7 +2,7 @@ import axios from 'axios';
 import { io } from 'socket.io-client';
 
 const instance = axios.create({
-   baseURL: 'http://localhost:4444/api',
+   baseURL: 'https://linkstagram-api.onrender.com/api',
 });
 
 instance.interceptors.request.use((config) => {
@@ -11,6 +11,6 @@ instance.interceptors.request.use((config) => {
    return config;
 });
 
-export const socket = io('http://localhost:4444');
+export const socket = io('https://linkstagram-api.onrender.com/api');
 
 export default instance;
