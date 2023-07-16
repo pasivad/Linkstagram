@@ -92,11 +92,17 @@ export const editUserInfo = ({
   job: string;
   description: string;
 }) => {
-  axios.patch('/user', {
-    userName: userName,
-    job: job,
-    description: description,
-  });
+  axios
+    .patch('/user', {
+      userName: userName,
+      job: job,
+      description: description,
+    })
+    .then(() => window.location.reload())
+    .catch((err) => {
+      console.warn(err);
+      alert('Failed to edit account');
+    });
 };
 
 export const addPost = ({ text, image }: { text: string; image: File }) => {
@@ -116,12 +122,14 @@ export const addPost = ({ text, image }: { text: string; image: File }) => {
     });
 };
 
-export const updateUserAvatar = (avatarUrl : File) => {
+export const updateUserAvatar = (avatarUrl: File) => {
   let formData = new FormData();
   formData.append('avatarUrl', avatarUrl);
-  axios.patch('/user/avatar', formData).then(() => {
-  }).catch((err) => {
-    console.warn(err);
-    alert('Failed to load an avatar');
-  });
-}
+  axios
+    .patch('/user/avatar', formData)
+    .then(() => {})
+    .catch((err) => {
+      console.warn(err);
+      alert('Failed to load an avatar');
+    });
+};
