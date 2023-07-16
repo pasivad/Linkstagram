@@ -1,24 +1,22 @@
-import React from 'react'
+import React from 'react';
 
-import './SignIn.scss'
+import Header from '../../components/Header/Header';
+import LanguageHeader from '../../components/LanguageHeader/LanguageHeader';
+import PhotosBlock from '../../components/PhotosBlock/PhotosBlock';
+import SignInForm from '../../components/SignInForm/SignInForm';
 
-import Header from '../../components/Header/Header'
-import LanguageHeader from '../../components/LanguageHeader/LanguageHeader'
-import PhotosBlock from '../../components/PhotosBlock/PhotosBlock'
-import SignInForm from '../../components/SignInForm/SignInForm'
+import './SignIn.scss';
 
-const SignIn = () => {
-   return (
-      <>
-         <Header>            
-            <LanguageHeader />
-         </Header>
-         <div className="signInContainer">
-            <PhotosBlock />
-            <SignInForm />
-         </div>
-      </>
-   )
-}
+const SignIn = () => (
+  <>
+    <Header>
+      <LanguageHeader />
+    </Header>
+    <div className="signInContainer">
+      <PhotosBlock />
+      <SignInForm />
+    </div>
+  </>
+);
 
-export default SignIn
+export default SignIn;

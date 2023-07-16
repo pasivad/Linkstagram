@@ -1,112 +1,111 @@
 @import '../../assets/scss/vars';
 
 .newPostForm {
-   width: 476px;
-   padding: 50px;
-   text-align: left;
+  width: 476px;
+  padding: 50px;
+  text-align: left;
 }
 
 .choosePhoto {
-   position: relative;
-   display: block;
-   width: 100%;
-   height: 100%;
-   background-color: $gray;
-   border-radius: 12px;
-   text-align: center;
-   padding: 230px 0 80px;
-   color: white;
-   font-size: 16px;
-   font-family: 'Poppins';
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: $gray;
+  border-radius: 12px;
+  text-align: center;
+  padding: 230px 0 80px;
+  color: white;
+  font-size: 16px;
+  font-family: 'Poppins';
 
-   &--active {
-      padding: 0;
-   }
+  &--active {
+    padding: 0;
+  }
 
-   svg {
-      font-size: 100px;
-      position: absolute;
-      top: 30%;
-      left: 40%;
-   }
+  svg {
+    font-size: 100px;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+  }
 
-   &:hover {
-      cursor: pointer;
-   }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .loadedImage {
-   width: 100%;
-   height: 326px;
-   object-fit: cover;
-   border-radius: 12px;
-
+  width: 100%;
+  height: 326px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
-
 .inputItem {
-   display: grid;
-   padding: 15px 0;
+  display: grid;
+  padding: 15px 0;
 
-   label {
-      font-size: 13px;
-      color: $dark_gray;
-      line-height: 22px;
-   }
+  label {
+    font-size: 13px;
+    color: $dark_gray;
+    line-height: 22px;
+  }
 
-   input, textarea {
-      padding: 15px;
+  input,
+  textarea {
+    padding: 15px;
 
-      font-family: 'Poppins';
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 20px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
 
-      color: $black;
+    color: $black;
 
-      border: none;
-      border-radius: 12px;
+    border: none;
+    border-radius: 12px;
 
-      box-shadow: 0 0 1px 0 rgba($color: $black, $alpha: .5);
-      resize: none;
-   }
+    box-shadow: 0 0 1px 0 rgba($color: $black, $alpha: 0.5);
+    resize: none;
+  }
 }
 
 .editProfileButtons {
-   margin-top: 40px;
-   display: flex;
-   justify-content: space-between;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .editProfileBtn {
-   width: 48%;
-   padding: 15px 0;
+  width: 48%;
+  padding: 15px 0;
 
-   border-radius: 12px;
-   border: none;
-   box-shadow: 0 0 1px 0 rgba($color: $black, $alpha: .5);
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 0 1px 0 rgba($color: $black, $alpha: 0.5);
 
-   font-family: 'Poppins';
-   font-size: 14px;
-   font-weight: 500;
+  font-family: 'Poppins';
+  font-size: 14px;
+  font-weight: 500;
 
-   transition: background-color .2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
 
-   &--cancel {
-      background-color: white;
-      color: $black;
+  &--cancel {
+    background-color: white;
+    color: $black;
 
-      &:hover {
-         background-color: $gray;
-      }
-   }
+    &:hover {
+      background-color: $gray;
+    }
+  }
 
-   &--save {
-      background-color: $blue;
-      color: white;
+  &--save {
+    background-color: $blue;
+    color: white;
 
-      &:hover {
-         background-color: darken($color: $blue, $amount: 20);
-      }
-   }
+    &:hover {
+      background-color: darken($color: $blue, $amount: 20);
+    }
+  }
 }

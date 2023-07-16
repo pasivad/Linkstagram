@@ -1,42 +1,40 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { IoClose } from 'react-icons/io5'
+import React from 'react';
+import { IoClose } from 'react-icons/io5';
 
-import './StoriesLayout.scss'
-import StoriesOpenItem from '../StoriesOpenItem/StoriesOpenItem'
+import StoriesOpenItem from '../StoriesOpenItem/StoriesOpenItem';
 
-interface StoriesLayoutProps {
-   setOpenStory: Function
-}
+import './StoriesLayout.scss';
+import { useDispatch } from 'react-redux';
+import { showStories } from '../../redux/slices/modals';
 
-const StoriesLayout = ({setOpenStory}: StoriesLayoutProps) => {
-   const stories = [
-      {className: "storiesOpenItem"},
-      {className: "storiesOpenItem"},
-      {className: "storiesOpenItem storiesOpenItem--active"},
-      {className: "storiesOpenItem"},
-      {className: "storiesOpenItem"}
-   ]
-   return (
-      <div className='storiesLayout'>
-         <div className="storiesLayoutHeader">
-            <Link to='/home' className="storiesLayoutTitle" onClick={() => setOpenStory(false)}>
-               Linkstagram
-            </Link>
-            <button className='storiesCloseBtn' onClick={() => setOpenStory(false)}>
-               <IoClose />    
-            </button>
-         </div>
-         <div className="storiesLayoutSlider">
-            {
-               stories.map((story, id) => (
-                  <StoriesOpenItem key={id} className={story.className} />
-               ))
-            }
+const stories = [
+  { className: 'storiesOpenItem' },
+  { className: 'storiesOpenItem' },
+  { className: 'storiesOpenItem storiesOpenItem--active' },
+  { className: 'storiesOpenItem' },
+  { className: 'storiesOpenItem' },
+];
 
-         </div>
+const StoriesLayout = () => {
+  const dispatch = useDispatch();
+
+  return (
+    <div className="storiesLayout">
+      <div className="storiesLayoutHeader">
+        <h1 className="storiesLayoutTitle" onClick={() => dispatch(showStories())}>
+          Linkstagram
+        </h1>
+        <button className="storiesCloseBtn" onClick={() => dispatch(showStories())}>
+          <IoClose />
+        </button>
       </div>
-   )
-}
+      <div className="storiesLayoutSlider">
+        {stories.map((story, id) => (
+          <StoriesOpenItem key={id} className={story.className} />
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export default StoriesLayout
+export default StoriesLayout;

@@ -1,23 +1,18 @@
-import React from 'react'
-import { useState } from 'react'
+import React from 'react';
+import { useDispatch } from 'react-redux';
 
-import storiesAvatar from '../../assets/images/avatars/avatar1.png'
+import { showStories } from '../../redux/slices/modals';
 
-import './StoryItem.scss'
+import './StoryItem.scss';
 
-interface StoryItemProps {
-   setOpenStory: Function
-}
+const StoryItem = ({ avatarUrl }: { avatarUrl: string }) => {
+  const dispatch = useDispatch();
 
-const StoryItem = ({setOpenStory}: StoryItemProps) => {
+  return (
+    <div className="storyItem" onClick={() => dispatch(showStories())}>
+      <img src={avatarUrl} alt="avatar" />
+    </div>
+  );
+};
 
-   return (
-      <>
-         <div className='storyItem' onClick={() => setOpenStory(true)}>
-            <img src={storiesAvatar} alt="avatar" />
-         </div>
-      </>
-   )
-}
-
-export default StoryItem
+export default StoryItem;

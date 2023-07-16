@@ -1,21 +1,20 @@
 import React from 'react';
-import { Provider } from 'react-redux'
-import ReactDOM from 'react-dom/client';
-import App from './App';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import ReactDOM from 'react-dom/client';
 import { disableReactDevTools } from '@fvilers/disable-react-devtools';
+import './i18n';
 
-import './i18n'
-import store from './redux/store'
+import store from './redux/store';
 
-if (process.env.NODE_ENV === 'production') disableReactDevTools()
+import App from './App';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+if (process.env.NODE_ENV === 'production') disableReactDevTools();
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
-  <BrowserRouter>  
+  <BrowserRouter>
     <Provider store={store}>
       <Routes>
         <Route path="/*" element={<App />} />

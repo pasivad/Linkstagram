@@ -1,22 +1,24 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
-import './MyPostItem.scss'
-import post from '../../assets/images/posts/post2.jfif'
-import { Link } from 'react-router-dom'
+import { showPostForm } from '../../redux/slices/modals';
+
+import './MyPostItem.scss';
 
 interface MyPostItemProps {
-   setOpenPost: Function,
-   id?: String,
-   imageUrl?: string
+  id?: string;
+  imageUrl?: string;
 }
 
-const MyPostItem = ({setOpenPost, id, imageUrl}: MyPostItemProps) => {
+const MyPostItem = ({ id, imageUrl }: MyPostItemProps) => {
+  const dispatch = useDispatch();
 
-   return (
-      <Link onClick={() => setOpenPost(true)} to={`${id}`} className='myPostItem'>
-         <img src={imageUrl} alt="myPostItem" className='myPostImg'/>
-      </Link>
-   )
-}
+  return (
+    <Link onClick={() => dispatch(showPostForm())} to={`post/${id}`} className="myPostItem">
+      <img src={imageUrl} alt="myPostItem" className="myPostImg" />
+    </Link>
+  );
+};
 
-export default MyPostItem
+export default MyPostItem;

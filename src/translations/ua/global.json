@@ -1,38 +1,38 @@
 {
-   "signOutHeader": "Buxid",
-   "signUpFooter": "Bzhe ye akaynt?",
-   "signInFooter": "Nema akaynty?",
-   "signUpHeader": "Registracia",
-   "signInHeader": "Bxid",
-   "homeButton": "Golovna",
-   "passwordPlaceholder": "Vvedit`...",
-   "language": {
-      "item1": "EN",
-      "item2": "PL",
-      "item3": "RU"
-   },
-   "post": {
-      "postTime": "Schojno",
-      "postShare": "Podilytysa"
-   },
-   "sidebar": {
-      "followers": "Clidkyvachi",
-      "following": "Clidkyvanya",
-      "editProfile": "Redagyvatu",
-      "newPost": "Pyblikaciya"
-   },
-   "modal": {
-      "userName": "Imya",
-      "secondName": "Prizvishe",
-      "job": "Robota",
-      "description": "Opis",
-      "cancelBtn": "Bidminutu",
-      "saveBtn": "Zberegti",
-      "userNamePlaceholder": "Imya...",
-      "secondNamePlaceholder": "Prizvishe...",
-      "jobPlaceholder": "Robota...",
-      "descriptionPlaceholder": "Opis...",
-      "editProfileHeader": "Informaciya pro profil",
-      "uploadPhoto": "Viberit fotografiyu z vashoi biblioteki"
-   }
+  "signOutHeader": "Buxid",
+  "signUpFooter": "Bzhe ye akaynt?",
+  "signInFooter": "Nema akaynty?",
+  "signUpHeader": "Registracia",
+  "signInHeader": "Bxid",
+  "homeButton": "Golovna",
+  "passwordPlaceholder": "Vvedit`...",
+  "language": {
+    "item1": "EN",
+    "item2": "PL",
+    "item3": "RU"
+  },
+  "post": {
+    "postTime": "Schojno",
+    "postShare": "Podilytysa"
+  },
+  "sidebar": {
+    "followers": "Clidkyvachi",
+    "following": "Clidkyvanya",
+    "editProfile": "Redagyvatu",
+    "newPost": "Pyblikaciya"
+  },
+  "modal": {
+    "userName": "Imya",
+    "secondName": "Prizvishe",
+    "job": "Robota",
+    "description": "Opis",
+    "cancelBtn": "Bidminutu",
+    "saveBtn": "Zberegti",
+    "userNamePlaceholder": "Imya...",
+    "secondNamePlaceholder": "Prizvishe...",
+    "jobPlaceholder": "Robota...",
+    "descriptionPlaceholder": "Opis...",
+    "editProfileHeader": "Informaciya pro profil",
+    "uploadPhoto": "Viberit fotografiyu z vashoi biblioteki"
+  }
 }

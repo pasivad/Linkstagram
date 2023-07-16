@@ -1,87 +1,72 @@
-import React, { useState } from 'react'
-import { IoMdPhotos } from 'react-icons/io'
-import { useTranslation } from 'react-i18next'
+import React, { useState } from 'react';
+import { IoMdPhotos } from 'react-icons/io';
+import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
 
-import './NewPostForm.scss'
-import axios from '../../axios'
+import { showNewPostForm } from '../../redux/slices/modals';
 
-interface NewPostFormProps {
-   setModal: Function
-}
+import { addPost } from '../../api/requests';
 
-const NewPostForm = ({setModal}: NewPostFormProps) => {
-   const {t} = useTranslation()
-   const [text, setText] = useState("")
-   const [postImage, setPostImage] = useState("")
-   const [images, setImages] = useState<any>([])
-   const [imageURLs, setImageURLs] = useState<any>([])
+import './NewPostForm.scss';
 
+const NewPostForm = () => {
+  const dispatch = useDispatch();
 
-   React.useEffect(() => { 
-      if (images.length < 1) return
-      const newImageUrls: string[] = []
-      images.forEach((image:any) => {
-         newImageUrls.push(URL.createObjectURL(image))
-      }); 
-      setImageURLs(newImageUrls)
-   }, [images])
+  const { t } = useTranslation();
+  const [text, setText] = useState<string>('');
+  const [uploadImage, setUploadImage] = useState<File>();
+  const [imageURLs, setImageURLs] = useState<string>('');
 
+  React.useEffect(() => {
+    if (!uploadImage) return;
+    setImageURLs(URL.createObjectURL(uploadImage));
+  }, [uploadImage]);
 
-   const handleFileChange = async (event:any) => {
-      setPostImage(event.target.files[0])
-      setImages([...event.target.files])
-   }
-   const handleTextChange = async (event:any) => {
-      setText(event.target.value)
-   }
+  const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (!event.target.files) return;
+    setUploadImage(event.target.files[0]);
+  };
+  const handleTextChange = async (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setText(event.target.value);
+  };
 
-   
+  const onSubmit = () => {
+    addPost({ text, image: uploadImage! });
+  };
 
-   const createPost = async () => {
-      // setModal(false)
-      try {
-         let formData = new FormData();
-         formData.append('imageUrl', postImage)
-         formData.append('text', text)
-         axios.post('/post', formData, {
-            headers: {
-            "Content-Type": "multipart/form-data",
-            }
-         }).then(res => window.location.reload())
-      } catch (err) {
-         console.warn(err)
-         alert("Failed to create post@")
-      }
-   }
-   console.log(imageURLs)
-
-   return (
-   <div className='newPostForm'>
-      <input type="file" id="actual-btn" hidden 
-      onChange={handleFileChange}/>
-      {
-         imageURLs.length < 1 ? (
-         <label className='choosePhoto' htmlFor="actual-btn">
-            <IoMdPhotos />
-            {t("modal.uploadPhoto")}
-         </label>
-         ) : (
-         <label className='choosePhoto choosePhoto--active' htmlFor="actual-btn">
-            <img className='loadedImage' src={imageURLs}></img> 
-         </label>)
-      }
+  return (
+    <div className="newPostForm">
+      <input type="file" id="actual-btn" hidden onChange={handleFileChange} />
+      {!imageURLs ? (
+        <label className="choosePhoto" htmlFor="actual-btn">
+          <IoMdPhotos />
+          {t('modal.uploadPhoto')}
+        </label>
+      ) : (
+        <label className="choosePhoto choosePhoto--active" htmlFor="actual-btn">
+          <img className="loadedImage" src={imageURLs} alt="loadedImage"></img>
+        </label>
+      )}
 
       <div className="inputItem">
-         <label htmlFor="text">{t("modal.description")}</label>
-         <textarea rows={4} value={text} onChange={handleTextChange}
-         placeholder={`${t("modal.descriptionPlaceholder")}`}/>
+        <label htmlFor="text">{t('modal.description')}</label>
+        <textarea
+          rows={4}
+          value={text}
+          onChange={handleTextChange}
+          placeholder={`${t('modal.descriptionPlaceholder')}`}
+        />
       </div>
       <div className="editProfileButtons">
-         <button onClick={() => setModal(false)} className='editProfileBtn editProfileBtn--cancel'>{t("modal.cancelBtn")}</button>
-         <button onClick={createPost} className='editProfileBtn editProfileBtn--save'>{t("modal.saveBtn")}</button>
+        <button onClick={() => dispatch(showNewPostForm())} className="editProfileBtn editProfileBtn--cancel">
+          {t('modal.cancelBtn')}
+        </button>
+        <button onClick={onSubmit} className="editProfileBtn editProfileBtn--save">
+          {t('modal.saveBtn')}
+        </button>
       </div>
-   </div>
-   )
-}
+    </div>
+  );
+};
 
-export default NewPostForm
+export default NewPostForm;

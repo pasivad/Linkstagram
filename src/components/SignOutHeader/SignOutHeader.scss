@@ -1,29 +1,29 @@
 @import '../../assets/scss/vars';
 
 .signOutHeader {
-   padding: 10px 25px;
-   margin-right: 16px;
-   color: $black;
-   background-color: white;
-   border-radius: 12px;
-   border: 1px solid $gray;
+  padding: 10px 25px;
+  margin-right: 16px;
+  color: $black;
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid $gray;
 
-   text-decoration: none;
-   font-size: 12px;
-   font-weight: 600;
-   line-height: 20px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
 
-   transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
-   &:hover {
-      background-color: $black;
-      color: white;
-      border: 1px solid $gray;
-   }
+  &:hover {
+    background-color: $black;
+    color: white;
+    border: 1px solid $gray;
+  }
 }
 
 @media screen and (max-width: 500px) {
-   .signOutHeader {
-      display: none;
-   }
+  .signOutHeader {
+    display: none;
+  }
 }

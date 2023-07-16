@@ -1,35 +1,35 @@
 {
-   "signOutHeader": "Sign Out",
-   "signUpFooter": "Have an account?",
-   "signInFooter": "Don't have an account?",
-   "signUpHeader": "Sign Up",
-   "signInHeader": "Sign In",
-   "homeButton": "Home",
-   "passwordPlaceholder": "Type in...",
-   "language": {
-      "item1": "EN",
-      "item2": "UA",
-      "item3": "PL"
-   },
-   "post": {
-      "postTime": "Just now",
-      "postShare": "Share"
-   },
-   "sidebar": {
-      "followers": "Followers",
-      "following": "Following",
-      "editProfile": "Edit profile",
-      "newPost": "New post"
-   },
-   "modal": {
-      "userName": "User Name",
-      "secondName": "Second Name",
-      "job": "Job",
-      "description": "Description",
-      "userNamePlaceholder": "User Name...",
-      "secondNamePlaceholder": "Second Name...",
-      "jobPlaceholder": "Job...",
-      "descriptionPlaceholder": "Description...",
-      "uploadPhoto": "Upload any photos from your library"
-   }
+  "signOutHeader": "Sign Out",
+  "signUpFooter": "Have an account?",
+  "signInFooter": "Don't have an account?",
+  "signUpHeader": "Sign Up",
+  "signInHeader": "Sign In",
+  "homeButton": "Home",
+  "passwordPlaceholder": "Type in...",
+  "language": {
+    "item1": "EN",
+    "item2": "UA",
+    "item3": "PL"
+  },
+  "post": {
+    "postTime": "Just now",
+    "postShare": "Share"
+  },
+  "sidebar": {
+    "followers": "Followers",
+    "following": "Following",
+    "editProfile": "Edit profile",
+    "newPost": "New post"
+  },
+  "modal": {
+    "userName": "User Name",
+    "secondName": "Second Name",
+    "job": "Job",
+    "description": "Description",
+    "userNamePlaceholder": "User Name...",
+    "secondNamePlaceholder": "Second Name...",
+    "jobPlaceholder": "Job...",
+    "descriptionPlaceholder": "Description...",
+    "uploadPhoto": "Upload any photos from your library"
+  }
 }

@@ -1,139 +1,171 @@
 @import '../../assets/scss/vars';
 
-.commentItem {
-   display: flex;
-   padding: 15px 0;
+.commentBlock {
+  position: relative;
+}
 
-   &--reply {
-      padding-left: 50px;
-   }
+.commentItem {
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+
+  &--reply {
+    padding-left: 50px;
+  }
 }
 
 .commentAuthor {
-   width: 40px;
-   height: 40px;
-   border-radius: 8px;
-   border: .5px solid $gray;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 0.5px solid $gray;
+  object-fit: cover;
 }
 
 .skeleton-commentAuthor {
-   width: 40px;
-   height: 40px;
-   border-radius: 8px;
-   border: .5px solid $gray;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 0.5px solid $gray;
 }
 
 .commentBody {
-   padding-left: 15px;
-   width: 260px;
-   line-height: 20px;
-   font-size: 12px;
-   font-weight: 500;
-   font-family: 'Poppins';
+  padding-left: 15px;
+  width: 260px;
+  line-height: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Poppins';
+  overflow-wrap: break-word;
 
-   &--reply {
-      width: 210px;
-   }
+  &--reply {
+    width: 210px;
+  }
+
+  span {
+    color: $blue;
+  }
 }
 
 .skeleton-commentBody {
-   width: 220px;
-   margin-left: 20px;
-   line-height: 20px;
-   font-size: 12px;
-   font-weight: 500;
-   font-family: 'Poppins';
+  width: 220px;
+  margin-left: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Poppins';
 }
 
 .commentFooter {
-   display: flex;
-   line-height: 24px;
+  display: flex;
+  line-height: 24px;
 }
 
 .commentTime {
-   font-weight: 400;
-   color: $gray;
-   width: 50px;
+  font-weight: 400;
+  color: $gray;
+  width: 50px;
 }
 
 .commentLikeStats {
-   padding: 0 25px;
-   color: $gray;
-   width: 50px;
+  padding: 0 25px;
+  color: $gray;
+  width: 50px;
 }
 
 .commentReply {
-   border: none;
-   background-color: transparent;
-   color: $dark_gray;
-   font-weight: 600;
-   padding: 0;
+  border: none;
+  background-color: transparent;
+  color: $dark_gray;
+  font-weight: 600;
+  padding: 0;
 
-   transition: color .1s ease-in-out;
-   &:hover {
-      color: $gray;
-   }
+  transition: color 0.1s ease-in-out;
+  &:hover {
+    color: $gray;
+  }
+}
+
+.openReplies {
+  padding-left: 80px;
+
+  background: none;
+  border: none;
+  font-size: 12px;
+  font-family: 'Poppins';
+  color: $dark_gray;
+
+  &::before {
+    display: block;
+    content: '';
+    height: 1px;
+    width: 20px;
+    background-color: $dark_gray;
+
+    position: absolute;
+    top: 75px;
+    left: 50px;
+    z-index: 1;
+  }
 }
 
 .commentLike {
-   margin-left: auto;
-   border: none;
-   background-color: transparent;
-   color: $gray;
-   font-size: 30px;
-   height: 36px;
-   width: 36px;
-   padding: 0;
+  margin-left: auto;
+  border: none;
+  background-color: transparent;
+  color: $gray;
+  font-size: 30px;
+  height: 30px;
+  padding: 0;
 
-   transition: all .2s ease-in-out;
-   &:hover {
-      color: $dark_gray;
-   }
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: $dark_gray;
+  }
 
-   &--liked {
-      color: #FB766E;
-      &:hover {
-         color: darken($color: #FB766E, $amount: 10);
-      }
-   }
+  &--liked {
+    color: #fb766e;
+    &:hover {
+      color: darken($color: #fb766e, $amount: 10);
+    }
+  }
 }
 
 // Skeleton
 .skeleton {
-   animation: skeleton-loading 1s linear infinite alternate;
+  animation: skeleton-loading 1s linear infinite alternate;
 }
 
 @keyframes skeleton-loading {
-   0% {
-     background-color: hsl(200, 20%, 80%);
-   }
-   100% {
-     background-color: hsl(200, 20%, 95%);
-   }
+  0% {
+    background-color: hsl(200, 20%, 80%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
 }
 
 @media screen and (max-width: 1200px) {
-   .commentBody {
-      width: 190px;
-      &--reply {
-         width: 150px;
-      }
-   }
-   .commentLikeStats {
-      padding: 0 15px
-   }
+  .commentBody {
+    width: 190px;
+    &--reply {
+      width: 150px;
+    }
+  }
+  .commentLikeStats {
+    padding: 0 15px;
+  }
 }
 
-
 @media screen and (max-width: 460px) {
-   .commentBody {
-      font-size: 10px;
-   }
-   .commentAuthor {
-      width: 30px;
-      height: 30px;
-   }
-   .commentLike {
-      font-size: 24px;
-   }
+  .commentBody {
+    font-size: 10px;
+  }
+  .commentAuthor {
+    width: 30px;
+    height: 30px;
+  }
+  .commentLike {
+    font-size: 24px;
+  }
 }

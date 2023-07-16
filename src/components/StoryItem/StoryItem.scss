@@ -1,35 +1,37 @@
 @import '../../assets/scss/vars';
 
 .storyItem {
-   width: 61.2px;
-   height: 61.2px;
+  width: 61.2px;
+  height: 61.2px;
 
-   box-sizing: border-box;
-   background: linear-gradient(45deg, rgba(116,237,242,1) 0%, rgba(81,86,230,1) 100%);;
+  box-sizing: border-box;
+  background: linear-gradient(45deg, rgba(116, 237, 242, 1) 0%, rgba(81, 86, 230, 1) 100%);
 
-   border-radius: 16px;
-   margin-right: 24px;
-   align-items: center;
+  border-radius: 16px;
+  margin-right: 24px;
+  align-items: center;
 
-   &:hover {
-      cursor: pointer;
-   }
+  &:hover {
+    cursor: pointer;
+  }
 
-   &:last-child {
-      margin-right: 0;
-   }
+  &:last-child {
+    margin-right: 0;
+  }
 
-   img {
-      width: 56px;
-      height: 56px;
+  img {
+    width: 55px;
+    height: 55px;
 
-      display: block;
-      margin: 1.8px;
+    display: block;
+    margin: 2.4px;
 
-      // box-sizing: border-box;
-      background-color: white;
-      // box-shadow: 0 0 1px 0 rgba($color: $black, $alpha: .5);
-      border: 1px solid white;
-      border-radius: 16px;
-   }
+    object-fit: cover;
+
+    // box-sizing: border-box;
+    background-color: white;
+    // box-shadow: 0 0 1px 0 rgba($color: $black, $alpha: .5);
+    border: 1px solid white;
+    border-radius: 14px;
+  }
 }

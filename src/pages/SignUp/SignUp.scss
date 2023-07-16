@@ -1,20 +1,21 @@
 @import '../../assets/scss/vars';
 
 .signUpContainer {
-   display: flex;
-   margin: 0 200px;
-   padding-top: 90px;
+  display: flex;
+  margin: 0 200px;
+  padding-top: 90px;
 }
+
 @media screen and (max-width: $small) {
-   .signUpContainer {
-      margin: 0 50px;
-   }
+  .signUpContainer {
+    margin: 0 50px;
+  }
 }
 
 @media screen and (max-width: $tablet) {
-   .signUpContainer {
-      justify-content: center;
-      padding-bottom: 100px;
-      margin: 0;
-   }
+  .signUpContainer {
+    justify-content: center;
+    padding-bottom: 100px;
+    margin: 0;
+  }
 }

@@ -1,26 +1,26 @@
 @import '../../assets/scss/vars';
 
-.posts { 
-   max-width: 560px; 
+.posts {
+  max-width: 560px;
 }
 @media screen and (max-width: 600px) {
-   .posts {
-      max-width: 460px;
-   }
+  .posts {
+    max-width: 460px;
+  }
 }
 
 @media screen and (max-width: 480px) {
-   .posts {
-      max-width: 360px;
-   }
+  .posts {
+    max-width: 360px;
+  }
 }
 @media screen and (max-width: 420px) {
-   .posts {
-      max-width: 300px;
-   }
+  .posts {
+    max-width: 300px;
+  }
 }
 @media screen and (max-width: 340px) {
-   .posts {
-      max-width: 280px;
-   }
+  .posts {
+    max-width: 280px;
+  }
 }

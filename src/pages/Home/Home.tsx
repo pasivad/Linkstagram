@@ -1,9 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
-import axios from '../../axios';
-
-import './Home.scss';
+import type { RootState } from '../../redux/store';
 
 import Header from '../../components/Header/Header';
 import SignOutHeader from '../../components/SignOutHeader/SignOutHeader';
@@ -16,54 +14,47 @@ import EditProfileForm from '../../components/EditProfileForm/EditProfileForm';
 import NewPostForm from '../../components/NewPostForm/NewPostForm';
 import StoriesLayout from '../../components/StoriesLayout/StoriesLayout';
 import PostForm from '../../components/PostForm/PostForm';
-import { useSelector } from 'react-redux';
-import { selectIsLogin } from '../../redux/slices/user';
-import { Navigate } from 'react-router-dom';
-import ModalNotFound from '../../components/ModalNotFound/ModalNotFound';
+
+import './Home.scss';
 
 const Home = () => {
-   const [editProfileModal, setEditProfileModal] = useState(false);
-   const [openPost, setOpenPost] = useState(false);
-   const [newPostModal, setNewPostModal] = useState(false);
-   const [openStory, setOpenStory] = useState(false);
+  const modals = useSelector((state: RootState) => state.modals);
 
-   const isAuth = useSelector(selectIsLogin);
+  if (modals.postForm || modals.newPostForm || modals.editProfileForm || modals.stories) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'visible';
+  }
 
-   if (editProfileModal || newPostModal || openStory || openPost) {
-      document.body.style.overflow = 'hidden';
-   } else {
-      document.body.style.overflow = 'visible';
-   }
-
-   return (
-      <>
+  return (
+    <>
       <Header>
-         <SignOutHeader />
-         <LanguageHeader />
-         <ProfileHeader />
+        <SignOutHeader />
+        <LanguageHeader />
+        <ProfileHeader />
       </Header>
       <div className="homeContainer">
-         <Posts setOpenStory={setOpenStory} setOpenPost={setOpenPost} />
-         <SidebarProfile setEditProfileModal={setEditProfileModal} setNewPostModal={setNewPostModal} />
+        <Posts />
+        <SidebarProfile />
       </div>
-      {editProfileModal && (
-         <Modal>
-            <EditProfileForm setModal={setEditProfileModal} />
-         </Modal>
+      {modals.editProfileForm && (
+        <Modal>
+          <EditProfileForm />
+        </Modal>
       )}
-      {newPostModal && (
-         <Modal>
-            <NewPostForm setModal={setNewPostModal} />
-         </Modal>
+      {modals.newPostForm && (
+        <Modal>
+          <NewPostForm />
+        </Modal>
       )}
-      {openStory && <StoriesLayout setOpenStory={setOpenStory} />}
-      {openPost && (
-         <Modal>
-            <PostForm setModal={setOpenPost} />
-         </Modal>
+      {modals.stories && <StoriesLayout />}
+      {modals.postForm && (
+        <Modal>
+          <PostForm />
+        </Modal>
       )}
-   </>
-   );
+    </>
+  );
 };
 
 export default Home;
