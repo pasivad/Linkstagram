@@ -3,23 +3,23 @@
 @import './fonts.scss';
 
 body {
-   font-size: 16px;
-   font-family: 'Poppins';
-   background-color: #FAFBFC;
+  font-size: 16px;
+  font-family: 'Poppins';
+  background-color: #fafbfc;
 }
 
 ::-webkit-scrollbar {
-   width: 6px;
-   background-color: transparent;
+  width: 6px;
+  background-color: transparent;
 }
-  
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-   border-radius: 4px;
-   background: $dark_gray; 
+  border-radius: 4px;
+  background: $dark_gray;
 }
- 
+
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-   background: #555; 
+  background: #555;
 }
