@@ -21,13 +21,34 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<SignUp />}></Route>
-      <Route path="/signin" element={<SignIn />}></Route>
-      <Route path="/home" element={<Home />}></Route>
-      <Route path="/home/:id" element={<Home />}></Route>
-      <Route path="/profile/:id" element={<Profile />}></Route>
-      <Route path="/profile/:id/post/:id" element={<Profile />}></Route>
-      <Route path="*" element={<Navigate to="/" />} />
+      <Route
+        path="/"
+        element={<SignUp />}
+      ></Route>
+      <Route
+        path="/signin"
+        element={<SignIn />}
+      ></Route>
+      <Route
+        path="/home"
+        element={<Home />}
+      ></Route>
+      <Route
+        path="/home/:id"
+        element={<Home />}
+      ></Route>
+      <Route
+        path="/profile/:id"
+        element={<Profile />}
+      ></Route>
+      <Route
+        path="/profile/:id/post/:id"
+        element={<Profile />}
+      ></Route>
+      <Route
+        path="*"
+        element={<Navigate to="/" />}
+      />
       {/* <Route path="/" element={<Home searchValue={searchValue}/>} /> */}
       {/* <Route path="/service" element={<Service knowPhone={knowPhone} setKnowPhone={setKnowPhone} searchPrice={searchPrice} setSearchPrice={setSearchPrice} />} />
     <Route path="/service/payment" element={<Payment knowPhone={knowPhone} searchPrice={searchPrice} />} /> */}
