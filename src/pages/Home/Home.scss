@@ -6,7 +6,37 @@
   padding: 140px 0 100px;
   display: flex;
   justify-content: space-between;
+
+  .tr {
+    border: 1px solid black;
+    width: 560px;
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-between;
+  }
 }
+
+.adminTitle {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.vigenereEncryption {
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0;
+  align-items: center;
+
+  input {
+    margin: 20px 0;
+  }
+}
+
 @media screen and (max-width: 1100px) {
   .homeContainer {
     justify-content: center;

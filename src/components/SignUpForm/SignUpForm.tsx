@@ -15,7 +15,12 @@ const SignUpForm = () => {
   const dispatch = useDispatch<AppDispatch>();
   const isAuth = useSelector(selectIsLogin);
 
-  const { register, handleSubmit } = useForm({
+  const {
+    register,
+    handleSubmit,
+    setError,
+    formState: { errors },
+  } = useForm({
     defaultValues: {
       email: '',
       userName: '',
@@ -25,6 +30,9 @@ const SignUpForm = () => {
   });
 
   const onSubmit = async ({ userName, email, password }: { userName: string; email: string; password: string }) => {
+    if (!email || !password || !userName) {
+      setError('email', { type: 'focus' }, { shouldFocus: true });
+    }
     const data = await dispatch(fetchRegister({ userName, email, password }));
 
     if (!data.payload) {
@@ -42,7 +50,10 @@ const SignUpForm = () => {
 
   return (
     <div className="signUp_container">
-      <form className="signUp" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className="signUp"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <div className="signUp_title">{t('signUpHeader')}</div>
         <label htmlFor="email">Email</label>
         <input
@@ -61,10 +72,11 @@ const SignUpForm = () => {
         <label htmlFor="password">Password</label>
         <input
           className="input_password"
-          type="text"
+          type="password"
           {...register('password', { required: 'Enter Password' })}
           placeholder="Type in..."
         />
+        {errors.email && <p className="error">Mandatory info missing</p>}
         <button className="signUp_button">{t('signUpHeader')}</button>
         <div className="accountExist">
           {t('signUpFooter')}
