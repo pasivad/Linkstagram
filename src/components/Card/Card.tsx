@@ -5,6 +5,7 @@ import { BsArrowRight } from 'react-icons/bs';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import ReadMoreAndLess from 'react-read-more-less';
+import { saveAs } from 'file-saver';
 
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState } from '../../redux/store';
@@ -41,12 +42,13 @@ const Card = ({ id, userId, avatar, name, postImg, text, likes, commentsNumber, 
 
   const [updateLikes, setUpdateLikes] = useState<number>(likes);
   const [updateComments, setUpdateComments] = useState<number>(commentsNumber);
+  const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false);
 
   const user: UserProps = useSelector((state: RootState) => state.user);
   const [isLikedByUser, setIsLikedByUser] = useState<boolean | undefined>(user.data?.likes.includes(id!));
 
-  socket.on('receive-comments', ({postId, commentsNumber}) => {
-    if (postId === id) setUpdateComments(commentsNumber)
+  socket.on('receive-comments', ({ postId, commentsNumber }) => {
+    if (postId === id) setUpdateComments(commentsNumber);
   });
 
   // Get Date
@@ -77,25 +79,80 @@ const Card = ({ id, userId, avatar, name, postImg, text, likes, commentsNumber, 
       },
     });
   };
+  const handleSaveBtn = () => {
+    saveAs(postImg || '', 'image.jpg');
+  };
+  const handleShareBtn = () => {
+    navigator.clipboard.writeText(postImg || '');
+    alert('Image URL successfully coppied to clipboard');
+  };
+  const handlePrintBtn = () => {
+    
+  };
 
   return (
     <div className="cardItem">
       <div className="cardHeader">
         <Link to={`/profile/${userId}`}>
-          <img className="cardAvatar" src={avatar} alt="avatar"></img>
+          <img
+            className="cardAvatar"
+            src={avatar}
+            alt="avatar"
+          ></img>
         </Link>
         <div className="cardHeaderInfo">
-          <Link to={`/profile/${userId}`} className="cardName">
+          <Link
+            to={`/profile/${userId}`}
+            className="cardName"
+          >
             {name}
           </Link>
           <div className="cardTime">{passedTime}</div>
         </div>
-        <div className="cardSettings">...</div>
+        <div className="settingsWrapper">
+          <button
+            className="cardSettings"
+            onClick={() => setIsSettingsOpen(!isSettingsOpen)}
+          >
+            ...
+          </button>
+          {isSettingsOpen && (
+            <div className="settingsBody">
+              <button
+                className="saveBtn"
+                onClick={handleSaveBtn}
+              >
+                Save
+              </button>
+              <button
+                className="shareBtn"
+                onClick={handleShareBtn}
+              >
+                Share
+              </button>
+              <button
+                className="printBtn"
+                onClick={handlePrintBtn}
+              >
+                Print
+              </button>
+            </div>
+          )}
+        </div>
       </div>
       <div className="cardBody">
-        <img className="cardPhoto" src={postImg} alt="post"></img>
+        <img
+          className="cardPhoto"
+          src={postImg}
+          alt="post"
+        ></img>
         <div className="cardText">
-          <ReadMoreAndLess className="read-more-content" charLimit={150} readMoreText="Show" readLessText={null}>
+          <ReadMoreAndLess
+            className="read-more-content"
+            charLimit={150}
+            readMoreText="Show"
+            readLessText={null}
+          >
             {text}
           </ReadMoreAndLess>
         </div>
@@ -103,13 +160,20 @@ const Card = ({ id, userId, avatar, name, postImg, text, likes, commentsNumber, 
       <div className="cardFooter">
         <div className="likes">
           {isLikedByUser ? (
-            <AiFillHeart color="#FB766E" onClick={handleUnLikeClick} />
+            <AiFillHeart
+              color="#FB766E"
+              onClick={handleUnLikeClick}
+            />
           ) : (
             <AiFillHeart onClick={handleLikeClick} />
           )}
           <span>{updateLikes}</span>
         </div>
-        <Link onClick={() => dispatch(showPostForm())} to={`/home/${id}`} className="comments">
+        <Link
+          onClick={() => dispatch(showPostForm())}
+          to={`/home/${id}`}
+          className="comments"
+        >
           <FaRegCommentDots />
           <span>{updateComments}</span>
         </Link>

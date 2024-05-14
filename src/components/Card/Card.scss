@@ -47,13 +47,19 @@
   font-weight: 600;
 }
 
+.settingsWrapper {
+  position: relative;
+  margin-right: -10px;
+  margin-left: auto;
+}
+
 .cardSettings {
-  font-size: 40px;
+  font-size: 30px;
   z-index: 0;
   cursor: pointer;
 
-  margin-right: -10px;
-  margin-left: auto;
+  background-color: transparent;
+  border: none;
 
   rotate: (90deg);
 
@@ -63,6 +69,31 @@
   transition: color 0.1s ease-in-out;
   &:hover {
     color: rgba($color: $black, $alpha: 0.25);
+  }
+}
+
+.settingsBody {
+  position: absolute;
+  left: 30px;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+  width: 100px;
+  border: 1px solid gray;
+  border-radius: 12px;
+  padding: 10px 0;
+
+  button {
+    background-color: transparent;
+    border: none;
+    padding: 5px 0;
+
+    &:hover {
+      background-color: rgba($color: $black, $alpha: 0.25);
+    }
   }
 }
 

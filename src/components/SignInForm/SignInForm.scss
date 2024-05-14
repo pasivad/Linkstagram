@@ -69,6 +69,11 @@
   }
 }
 
+.error {
+  font-size: 14px;
+  color: red;
+}
+
 @media screen and (max-width: $small) {
   .signIn {
     padding: 100px 0 0 50px;
