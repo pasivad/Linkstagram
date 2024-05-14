@@ -2,7 +2,7 @@ import axios from 'axios';
 import { io } from 'socket.io-client';
 
 const instance = axios.create({
-  baseURL: 'http://3.121.214.70/api',
+  baseURL: 'http://3.121.214.70:4444/api',
 });
 
 instance.interceptors.request.use((config) => {
