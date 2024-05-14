@@ -2,7 +2,7 @@ import axios from 'axios';
 import { io } from 'socket.io-client';
 
 const instance = axios.create({
-  baseURL: 'http://18.194.78.176:4444/api',
+  baseURL: 'http://3.121.214.70/api',
 });
 
 instance.interceptors.request.use((config) => {
@@ -11,6 +11,6 @@ instance.interceptors.request.use((config) => {
   return config;
 });
 
-export const socket = io('http://18.194.78.176:4444');
+export const socket = io('http://3.121.214.70:4444');
 
 export default instance;
