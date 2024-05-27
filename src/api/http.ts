@@ -11,6 +11,6 @@ instance.interceptors.request.use((config) => {
   return config;
 });
 
-export const socket = io(''https://linkstagram-api.onrender.com');
+export const socket = io('https://linkstagram-api.onrender.com');
 
 export default instance;
